@@ -11,7 +11,22 @@ on:
 
 jobs:
   lab-what-is-mlops:
-    name: "Lab · first brick (What is MLOps?)"
+    name: "Lab · spot the drift (What is MLOps?)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install exactly what the lab pins
+        run: pip install -r lab-what-is-mlops/requirements.txt
+      - name: Run the drift demo and check the checkpoint
+        run: |
+          python lab-what-is-mlops/drift_demo.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
+
+  lab-python-for-mlops:
+    name: "Lab · first brick (Python for MLOps)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +37,7 @@ jobs:
         run: pip install "pandas==3.0.6"
       - name: Run the lab script and check the checkpoint
         run: |
-          python lab-what-is-mlops/first_brick.py | tee out.txt
+          python lab-python-for-mlops/first_brick.py | tee out.txt
           grep -q "rows, columns: (344, 7)" out.txt
 
   lab-docker:
