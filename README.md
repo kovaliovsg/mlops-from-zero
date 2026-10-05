@@ -12,10 +12,10 @@ the top of each lab says when it was last verified.
 
 ## Labs
 
-| Lab | What you build | Time |
-|---|---|---|
-| [Lab 0 · First brick](lab-00-what-is-mlops/) | Python, pandas, one dataset, ten rows | 15 min |
-| [Lab 1 · A model in a box](lab-01-docker/) | A real scikit-learn model served by FastAPI, built into a Docker image, run as a container | 30 min |
+| Lab | For the video | What you build | Time |
+|---|---|---|---|
+| [The first brick](lab-what-is-mlops/) | What is MLOps? | Python, pandas, one dataset, ten rows | 15 min |
+| [A model in a box](lab-docker/) | Docker | A real scikit-learn model served by FastAPI, built into a Docker image, run as a container | 30 min |
 
 More labs are added as the course grows. **Fork this repository**: your fork becomes the public,
 end-to-end project that the course keeps telling you to build.

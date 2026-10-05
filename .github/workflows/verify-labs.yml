@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  lab-00:
-    name: "Lab 0 · first brick"
+  lab-what-is-mlops:
+    name: "Lab · first brick (What is MLOps?)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,16 +22,16 @@ jobs:
         run: pip install "pandas==3.0.6"
       - name: Run the lab script and check the checkpoint
         run: |
-          python lab-00-what-is-mlops/first_brick.py | tee out.txt
+          python lab-what-is-mlops/first_brick.py | tee out.txt
           grep -q "rows, columns: (344, 7)" out.txt
 
-  lab-01:
-    name: "Lab 1 · a model in a box"
+  lab-docker:
+    name: "Lab · a model in a box (Docker)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Build the image exactly as the lab says
-        run: docker build -t flower-api lab-01-docker
+        run: docker build -t flower-api lab-docker
       - name: Run the container and wait for it
         run: |
           docker run -d -p 8000:8000 --name flower flower-api

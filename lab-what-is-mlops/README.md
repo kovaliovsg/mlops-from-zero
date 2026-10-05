@@ -1,4 +1,4 @@
-# Lab 0 · The first brick
+# Lab · The first brick
 
 **Last verified:** 2026-10-04 · Python 3.12 · pandas 3.0 · Windows 11, macOS, Ubuntu
 
@@ -30,8 +30,8 @@ command again.
 A virtual environment is a private shelf of libraries for one project. You will do this for every lab.
 
 ```bash
-mkdir mlops-lab-00
-cd mlops-lab-00
+mkdir mlops-first-brick
+cd mlops-first-brick
 python -m venv .venv
 ```
 
@@ -117,5 +117,5 @@ Which species is heaviest?
 
 ## Hand in
 
-Commit `first_brick.py` to your fork of this repository under `lab-00-what-is-mlops/`. That is the first
+Commit `first_brick.py` to your fork of this repository under `lab-what-is-mlops/`. That is the first
 file of your public project.

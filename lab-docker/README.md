@@ -1,4 +1,4 @@
-# Lab 1 · A model in a box
+# Lab · A model in a box
 
 **Last verified:** 2026-10-04 · Docker Desktop 4.x (engine 29.8) · Python 3.12 · scikit-learn 1.9.1 · Windows 11
 
@@ -35,7 +35,7 @@ Either clone this repository or download the three files into a folder called `f
 
 ```bash
 git clone https://github.com/kovaliovsg/mlops-from-zero.git
-cd mlops-from-zero/lab-01-docker
+cd mlops-from-zero/lab-docker
 ```
 
 ### 3. Look at the recipe
@@ -146,4 +146,4 @@ on any machine with Docker: the whole kitchen travels with it.
 
 ## Hand in
 
-Commit the three files plus a `NOTES.md` with your two curl outputs to your fork under `lab-01-docker/`.
+Commit the three files plus a `NOTES.md` with your two curl outputs to your fork under `lab-docker/`.
