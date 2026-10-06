@@ -114,6 +114,8 @@ its README)
 
 3. **Open the lab's folder:** **File → Open Folder** (`Ctrl+K` `Ctrl+O`) → `mlops-from-zero\<lab folder>` — the
    lab's own folder, not the whole repository.
+   If VS Code asks about a Git repository in a parent folder, choose **Yes**: that lets **Git: Pull** work from
+   the lab's window.
 4. **Create its environment:** `Ctrl+Shift+P` → **Python: Create Environment** → **Venv** → **Python 3.12** (pick it
    even if a newer Python is preselected) → tick `requirements.txt` if the lab has one → **OK**. VS Code creates
    `.venv`, installs the libraries and selects it.
