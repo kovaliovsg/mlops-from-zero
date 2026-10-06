@@ -144,6 +144,17 @@ Cloned the original and want a fork now? Fork it on GitHub, then clone your fork
 
 ## If something here breaks
 
+- **`py install …` says `can't open file '…\install'`:** an older Python on your machine installed the old
+  **Python Launcher**, and its `py` command wins over the install manager's. The old launcher does not know
+  `install`, so it looks for a script file with that name.
+  1. Check the install manager is there: run `pymanager help`. If it is not recognized, install it first (above).
+  2. Click **Start**, open **Installed apps**, search **Python launcher** and click **Uninstall**. This removes only
+     the old `py` command; any Python you already have stays installed.
+  3. Open a **new** terminal and run the `py install` steps again.
+
+  To keep the old launcher instead, type `pymanager` in place of `py` for the install steps
+  (`pymanager install --configure -y`, `pymanager install 3.12`).
+  ([Python docs](https://docs.python.org/3/using/windows.html#troubleshooting))
 - **`py` or `python` opens the Microsoft Store:** Python is not installed yet, or its command aliases are not set.
   Install the Python install manager above; then open **Start**, search **Manage app execution aliases**, and check that the
   **Python (default)** aliases are on (`python.exe` set to *Python (default)*). If they already are, turn them off and
