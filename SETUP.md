@@ -24,7 +24,7 @@ the commands that differ are noted.
 
 The editor for everything in this course: code, terminal, notebooks, Git.
 
-- **Get it:** https://code.visualstudio.com/download → **Windows** → **User Installer, x64**.
+- **Get it:** on https://code.visualstudio.com/download, under **Windows**, click **User Installer** **x64**.
 - **Install:** accept the defaults. Setup adds VS Code to your PATH, so open a **new** terminal afterwards.
 - **Check:**
 
@@ -38,8 +38,8 @@ The editor for everything in this course: code, terminal, notebooks, Git.
 
 Every lab uses Python **3.12** — the version the course's libraries and Azure Machine Learning are verified with.
 
-- **Get it:** https://www.python.org/downloads/windows/ → **Python install manager** (the way python.org recommends
-  installing Python on Windows today), or from a terminal: `winget install 9NQ7512CXL7T`.
+- **Get it:** on https://www.python.org/downloads/windows/, download the **Python install manager** (the way
+  python.org recommends installing Python on Windows today), or from a terminal: `winget install 9NQ7512CXL7T`.
 - **Install:** run the downloaded file and accept the defaults. Then, in a new terminal, run the install manager's
   configuration checker and accept its recommended changes:
 
@@ -86,7 +86,7 @@ To get the labs and to save your own work in your fork.
 
 Only for *A model in a box*.
 
-- **Get it:** https://www.docker.com/products/docker-desktop/ → **Download for Windows**.
+- **Get it:** on https://www.docker.com/products/docker-desktop/, click **Download for Windows**.
 - **Install:** accept the defaults. It uses **WSL 2**; the installer sets it up and may ask for a restart.
 - **Check:** start Docker Desktop, wait until it says it is running, then:
 
@@ -104,36 +104,59 @@ Only for *A model in a box*.
 
 Two steps you do **once**, three you do for **every lab**.
 
+**Keyboard shortcuts used below** (on macOS, `Cmd` instead of `Ctrl`):
+
+| Shortcut | What it does |
+|---|---|
+| `Ctrl+Shift+P` | opens the **Command Palette** — VS Code's search box for every command; type a command's name and press **Enter** |
+| `Ctrl+K`, then `Ctrl+O` | **Open Folder** (the same as the **File** menu, **Open Folder**) |
+| `` Ctrl+Shift+` `` | opens a **terminal** (`` ` `` is the backtick key, left of `1`) |
+| `Ctrl+Shift+X` | opens **Extensions** |
+
 **Once, on day one**
 
 1. **Install the Python extension** ([section 4](#4-the-python-extension-in-vs-code)).
-2. **Get the labs:** in VS Code, `Ctrl+Shift+P` → **Git: Clone** → paste
-   `https://github.com/kovaliovsg/mlops-from-zero.git` → choose a folder → **Open**.
-   (Or fork the repository first and clone your fork — your fork becomes your public project.)
-   If VS Code asks whether you trust the authors, choose **Yes, I trust the authors** (on a Restricted Mode banner,
-   **Manage** → **Trust**; check any time with **Workspaces: Manage Workspace Trust**): trusting the `mlops-from-zero` folder trusts every lab inside it.
+2. **Get the labs:**
+   1. Press `Ctrl+Shift+P`, type **Git: Clone** and press **Enter**.
+   2. Paste `https://github.com/kovaliovsg/mlops-from-zero.git` and press **Enter**.
+   3. Choose the folder to clone into.
+   4. When VS Code asks whether to open the cloned repository, click **Open**.
+   5. If VS Code asks whether you trust the authors, choose **Yes, I trust the authors**. Trusting the
+      `mlops-from-zero` folder trusts every lab inside it. (On a Restricted Mode banner instead, click **Manage**,
+      then **Trust**. To check any time: `Ctrl+Shift+P`, **Workspaces: Manage Workspace Trust**.)
+
+   Or fork the repository first and clone your fork — your fork becomes your public project.
 
 **For every lab** (a lab that runs in a container, like *A model in a box*, needs no `.venv`: after step 3 follow
 its README)
 
-3. **Open the lab's folder:** **File → Open Folder** (`Ctrl+K` `Ctrl+O`) → `mlops-from-zero\<lab folder>` — the
-   lab's own folder, not the whole repository.
-   If VS Code asks about a Git repository in a parent folder, choose **Yes**: that lets **Git: Pull** work from
-   the lab's window.
-4. **Create its environment:** `Ctrl+Shift+P` → **Python: Create Environment** → **Venv** → **Python 3.12** (pick it
-   even if a newer Python is preselected) → tick `requirements.txt` if the lab has one → **OK**. VS Code creates
-   `.venv`, installs the libraries and selects it.
-5. **Run it:** open the terminal (`` Ctrl+Shift+` ``); its prompt starts with `(.venv)`. Follow the lab's README from
-   its first step; the **Checkpoint** at the end proves it worked.
+3. **Open the lab's folder:**
+   1. Press `Ctrl+K`, then `Ctrl+O` (or the **File** menu, **Open Folder**).
+   2. Go into `mlops-from-zero`, select the lab's own folder (for example `lab-what-is-mlops`) — not the whole
+      repository — and click **Select Folder**.
+   3. If VS Code asks about a Git repository in a parent folder, choose **Yes**: that lets **Git: Pull** work from
+      the lab's window.
+4. **Create its environment:**
+   1. Press `Ctrl+Shift+P`, type **Python: Create Environment** and press **Enter**.
+   2. Choose **Venv**.
+   3. Choose **Python 3.12** — pick it even if a newer Python is preselected.
+   4. Tick `requirements.txt` if the lab has one, and click **OK**.
 
-**A new lab was published?** Don't clone again: `Ctrl+Shift+P` → **Git: Pull** brings it into your copy. On a fork,
-first press **Sync fork** on your fork's GitHub page, then **Git: Pull**.
+   VS Code creates `.venv`, installs the libraries and selects it.
+5. **Run it:**
+   1. Open the terminal: `` Ctrl+Shift+` ``. Its prompt starts with `(.venv)`.
+   2. Follow the lab's README from its first step; the **Checkpoint** at the end proves it worked.
+
+**A new lab was published?** Don't clone again:
+1. On a fork only: press **Sync fork** on your fork's GitHub page.
+2. In VS Code, press `Ctrl+Shift+P`, type **Git: Pull** and press **Enter**. The new lab is now in your copy.
+
 Cloned the original and want a fork now? Fork it on GitHub, then clone your fork into a new folder.
 
 ## If something here breaks
 
 - **`py` or `python` opens the Microsoft Store:** Python is not installed yet, or its command aliases are not set.
-  Install the Python install manager above; then open **Start → Manage app execution aliases** and check that the
+  Install the Python install manager above; then open **Start**, search **Manage app execution aliases**, and check that the
   **Python (default)** aliases are on (`python.exe` set to *Python (default)*). If they already are, turn them off and
   on again. ([Python docs](https://docs.python.org/3/using/windows.html))
 - **`code`, `git` or `py` is "not recognized" right after installing:** open a **new** terminal (or restart VS Code);

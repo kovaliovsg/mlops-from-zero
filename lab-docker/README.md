@@ -31,8 +31,12 @@ This message shows that your installation appears to be working correctly.
 
 ### 2. Open the lab
 
-With the labs cloned once ([Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code), steps 1–2), open this
-lab's folder: **File → Open Folder** → `mlops-from-zero\lab-docker`, and open the terminal (`` Ctrl+Shift+` ``).
+With the labs cloned once ([Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code), steps 1–2):
+
+1. Press `Ctrl+K`, then `Ctrl+O` (or the **File** menu, **Open Folder**).
+2. Go into `mlops-from-zero`, select the `lab-docker` folder and click **Select Folder**.
+3. Open the terminal: `` Ctrl+Shift+` ``.
+
 This lab needs **no** `.venv`: Python and the libraries live inside the image you are about to build.
 
 ### 3. Look at the recipe
