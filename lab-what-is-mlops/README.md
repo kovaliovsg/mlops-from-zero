@@ -1,6 +1,6 @@
 # Lab · Spot the drift
 
-**Last verified:** 2026-10-05 · Python 3.12 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows, macOS, Ubuntu, GitHub Codespaces
+**Last verified:** 2026-10-05 · Python 3.12 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows 11, macOS, Ubuntu
 
 **For the video:** *What is MLOps?* — Part 1 ends with this homework.
 
@@ -12,10 +12,7 @@ in front of you — once because its inputs moved, once because the world change
 | You need | Why | Get it |
 |---|---|---|
 | Nothing for Part A | it is a pen-and-paper exercise | — |
-| For Part B, **either** a free GitHub account | runs the lab in your browser with Codespaces, no installs | https://github.com/signup |
-| **or** Python 3.11–3.13 on your machine | runs the lab locally | https://www.python.org/downloads/ (Windows: `winget install Python.Python.3.12` · macOS: `brew install python@3.12` · Ubuntu: `sudo apt install python3 python3-venv`) |
-
-Check a local Python with `python --version` — expected `Python 3.12.x` (3.11 or 3.13 also work).
+| For Part B: VS Code with the Python extension, Python 3.12, Git | the lab runs on your machine, in VS Code | [Set up your machine](../SETUP.md) |
 
 **Cost:** free. Nothing runs in Azure.
 
@@ -42,27 +39,12 @@ Two worked answers, so you can check your thinking:
 
 ## Part B · Watch it happen (10 minutes, optional)
 
-**In your browser:** open https://github.com/kovaliovsg/mlops-from-zero, click **Code → Codespaces → Create
-codespace on main**, wait for the terminal, then:
+1. In VS Code, open the `lab-what-is-mlops` folder and create its environment — **Python: Create Environment** →
+   **Venv** → **Python 3.12**, with `requirements.txt` ticked (the five steps in
+   [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code)).
+2. In the VS Code terminal (its prompt starts with `(.venv)`), run:
 
-```bash
-cd lab-what-is-mlops
-pip install -r requirements.txt
-python drift_demo.py
 ```
-
-**On your machine:**
-
-```bash
-git clone https://github.com/kovaliovsg/mlops-from-zero.git
-cd mlops-from-zero/lab-what-is-mlops
-python -m venv .venv
-```
-
-Activate it — Windows PowerShell `.venv\Scripts\Activate.ps1` · macOS / Linux `source .venv/bin/activate` — then:
-
-```bash
-pip install -r requirements.txt
 python drift_demo.py
 ```
 

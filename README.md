@@ -4,6 +4,9 @@ Hands-on labs for the **MLOps from Zero** video course. Each video teaches the *
 looked when it worked*. Each lab here is the *doing*: a short, copy-paste checklist you run on your own
 machine, with the expected output under every command.
 
+**Before your first lab: [set up your machine](SETUP.md)** — VS Code, Python, Git and the rest, with where to
+get each one and the install choices that matter. Every lab runs locally in VS Code.
+
 [![Labs verified](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml/badge.svg)](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml)
 
 **Every lab is re-run automatically once a month by the pipeline above.** If a tool changes a link, a
@@ -23,17 +26,13 @@ end-to-end project that the course keeps telling you to build.
 
 ## How to use a lab
 
-1. Open the lab folder and read its `README.md` top to bottom once.
+1. Set up your machine once ([SETUP.md](SETUP.md)), then open the lab's folder in VS Code and read its
+   `README.md` top to bottom once.
 2. Run the numbered steps. Compare what you see with the **expected output** under each command.
 3. The **Checkpoint** is the one command that proves it worked.
 4. Something different on your machine? Check **If it breaks** at the end of the lab, then
    [open an issue](https://github.com/kovaliovsg/mlops-from-zero/issues) with the step number and the
    exact output.
-
-## No install at all
-
-Click **Code → Codespaces → Create codespace** on this repository. The dev container has Python, pip and
-Docker ready. Every lab runs inside it unchanged.
 
 ## License
 

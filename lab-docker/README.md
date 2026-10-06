@@ -6,15 +6,15 @@
 your machine, and you have built the image yourself. This is the exact demo from the video, so you can
 compare every output with what you saw.
 
-**You need:** 30 minutes, a terminal, and Docker Desktop. The three files are in this folder:
+**You need:** 30 minutes, VS Code, Git and Docker Desktop — see [Set up your machine](../SETUP.md). Run every
+command in the VS Code terminal. The three files are in this folder:
 `app.py` (the model behind a web address), `requirements.txt` (the ingredients), `Dockerfile` (the recipe).
 
 ## Steps
 
 ### 1. Install Docker Desktop and prove it works
 
-Download Docker Desktop for your operating system from https://www.docker.com/products/docker-desktop/
-and install it. On Windows it needs WSL 2; the installer sets it up and may ask for a reboot.
+Install Docker Desktop as described in [Docker Desktop](../SETUP.md#5-docker-desktop) on the setup page.
 
 Start Docker Desktop, wait for the whale icon to stop animating, then in a terminal:
 

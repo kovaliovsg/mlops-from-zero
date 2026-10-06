@@ -1,31 +1,31 @@
 # Lab · The first brick
 
-**Last verified:** 2026-10-04 · Python 3.12 · pandas 3.0 · Windows 11, macOS, Ubuntu
+**Last verified:** 2026-10-04 · Python 3.12 · pandas 3.0 · Windows 11, macOS, Ubuntu · VS Code
 
 **For the video:** *Python for MLOps* (this lab is the starting point; it grows when that lesson is produced).
 
 **Goal:** by the end you have Python and pandas working, and you have looked at a real dataset with your
 own eyes. That is phase one of the roadmap, and every later lab starts from here.
 
-**You need:** 15 minutes and a terminal. Nothing else.
+**You need:** 15 minutes, and VS Code with the Python extension, Python 3.12 and Git — see
+[Set up your machine](../SETUP.md). Run every command in the VS Code terminal.
 
 ## Steps
 
 ### 1. Check whether Python is already there
 
 ```bash
-python --version
+py -V:3.12 --version
 ```
 
-Expected output (any 3.11, 3.12 or 3.13 is fine):
+Expected output:
 
 ```
-Python 3.12.x
+Python 3.12.10
 ```
 
-No output, or a version below 3.11? Install Python from https://www.python.org/downloads/ and, on
-Windows, tick **Add python.exe to PATH** in the installer. Then open a **new** terminal and run the
-command again.
+Not there? Follow [Python 3.12](../SETUP.md#2-python-312) on the setup page, then open a **new** terminal and
+run the command again. (macOS / Linux: `python3.12 --version`.)
 
 ### 2. Create a folder and a virtual environment
 
@@ -34,10 +34,10 @@ A virtual environment is a private shelf of libraries for one project. You will 
 ```bash
 mkdir mlops-first-brick
 cd mlops-first-brick
-python -m venv .venv
+py -V:3.12 -m venv .venv
 ```
 
-Activate it:
+(macOS / Linux: `python3.12 -m venv .venv`.) Activate it:
 
 - Windows PowerShell: `.venv\Scripts\Activate.ps1`
 - Windows cmd: `.venv\Scripts\activate.bat`
