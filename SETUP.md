@@ -98,9 +98,9 @@ Only for *A model in a box*.
 
 ## Run a lab in VS Code
 
-[![Run a lab in VS Code - watch on YouTube](assets/run-a-lab-in-vs-code.jpg)](https://youtu.be/g1SpgAq6Zqc)
+[![Run a lab in VS Code - how to set up and run a lab (YouTube video)](assets/video-run-a-lab-in-vs-code.jpg)](https://youtu.be/g1SpgAq6Zqc)
 
-The video *Run a lab in VS Code* (12 min) records these steps for real. Click the picture to watch it on YouTube.
+**Video: [Run a lab in VS Code](https://youtu.be/g1SpgAq6Zqc)** (12 min) — these steps, recorded for real. Click the picture to watch it on YouTube.
 
 Two steps you do **once**, three you do for **every lab**.
 
