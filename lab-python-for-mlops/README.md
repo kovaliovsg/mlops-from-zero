@@ -110,8 +110,8 @@ Which species is heaviest?
 
 ## If it breaks
 
-- **`python` opens the Microsoft Store (Windows):** the Store alias is in the way. Run `python3`, or
-  disable the alias in *Settings → Apps → Advanced app settings → App execution aliases*.
+- **`python` opens the Microsoft Store (Windows):** the command aliases are not set — see
+  [If something here breaks](../SETUP.md#if-something-here-breaks) on the setup page.
 - **`pip` says the pandas version does not exist:** pandas moved on. Run `pip install pandas` without the
   pin; the lab works with any 3.x. Then open an issue so this file gets updated.
 - **The dataset URL returns 404:** the file moved. Any CSV works for this lab; try

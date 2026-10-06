@@ -88,8 +88,8 @@ off by almost thirty portions a day (**concept drift**).
 
 ## If it breaks
 
-- **`python` opens the Microsoft Store (Windows):** the Store alias is in the way. Run `python3`, or turn the alias
-  off in *Settings → Apps → Advanced app settings → App execution aliases*.
+- **`python` opens the Microsoft Store (Windows):** the command aliases are not set — see
+  [If something here breaks](../SETUP.md#if-something-here-breaks) on the setup page.
 - **`pip` cannot find a pinned version:** the libraries moved on. Run `pip install numpy scikit-learn` without
   pins; the numbers may differ slightly but the story is the same. Then open an issue so this lab gets updated.
 - **Your numbers differ a little from the expected output:** fine, as long as check 2 and check 3 are far above

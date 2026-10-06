@@ -109,9 +109,10 @@ The same five steps for every lab:
 
 ## If something here breaks
 
-- **`py` or `python` opens the Microsoft Store:** Python is not installed yet, or the Store alias is in the way —
-  install the Python install manager above, or turn the aliases off in *Settings → Apps → Advanced app settings →
-  App execution aliases*.
+- **`py` or `python` opens the Microsoft Store:** Python is not installed yet, or its command aliases are not set.
+  Install the Python install manager above; then open **Start → Manage app execution aliases** and check that the
+  **Python (default)** aliases are on (`python.exe` set to *Python (default)*). If they already are, turn them off and
+  on again. ([Python docs](https://docs.python.org/3/using/windows.html))
 - **`code`, `git` or `py` is "not recognized" right after installing:** open a **new** terminal (or restart VS Code);
   installers change PATH for new windows only.
 - **A download page moved:** search for the tool's name plus "download"; then
