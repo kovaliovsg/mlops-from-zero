@@ -33,12 +33,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install pandas exactly as the lab says
-        run: pip install "pandas==3.0.6"
+      - name: Install exactly what the lab pins
+        run: pip install -r lab-python-for-mlops/requirements.txt
       - name: Run the lab script and check the checkpoint
         run: |
           python lab-python-for-mlops/first_brick.py | tee out.txt
-          grep -q "rows, columns: (344, 7)" out.txt
+          grep -q "CHECKPOINT OK" out.txt
 
   lab-docker:
     name: "Lab · a model in a box (Docker)"
@@ -57,6 +57,10 @@ jobs:
           b=$(curl -sf "localhost:8000/predict?sepal_length=6.7&sepal_width=3.0&petal_length=5.2&petal_width=2.3")
           echo "$a"; echo "$b"
           [ "$a" = '{"flower":"setosa"}' ] && [ "$b" = '{"flower":"virginica"}' ]
+      - name: Checkpoint - the lab's own checkpoint inside the container
+        run: |
+          docker exec flower python checkpoint.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
       - name: Clean up
         if: always()
         run: docker rm -f flower || true

@@ -8,3 +8,6 @@ print()
 print("rows, columns:", df.shape)
 print("missing values per column:")
 print(df.isna().sum())
+
+ok = df.shape == (344, 7) and df.isna().sum().sum() > 0
+print("CHECKPOINT OK" if ok else "CHECKPOINT FAILED")

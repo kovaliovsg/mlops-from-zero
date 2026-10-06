@@ -1,6 +1,6 @@
 # Lab · Spot the drift
 
-**Last verified:** 2026-10-05 · Python 3.12 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows 11, macOS, Ubuntu
+**Last verified:** 2026-10-06 · Python 3.12.10 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows · VS Code
 
 **For the video:** *What is MLOps?* — Part 1 ends with this homework.
 
@@ -37,11 +37,11 @@ Two worked answers, so you can check your thinking:
 | Data drift | spammers switch to images and new words the model never saw | a heatwave: temperatures far above anything in training |
 | Concept drift | a word that meant "spam" last year is now in normal newsletters | a competitor opens next door: same weather, fewer customers |
 
-## Part B · Watch it happen (10 minutes, optional)
+## Part B · Watch it happen (10 minutes)
 
 1. In VS Code, open the `lab-what-is-mlops` folder and create its environment — **Python: Create Environment** →
-   **Venv** → **Python 3.12**, with `requirements.txt` ticked (the five steps in
-   [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code)).
+   **Venv** → **Python 3.12**, with `requirements.txt` ticked (steps 3–5 of
+   [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code); steps 1–2 are done once).
 2. In the VS Code terminal (its prompt starts with `(.venv)`), run:
 
 ```

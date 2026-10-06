@@ -1,14 +1,14 @@
 # Lab · A model in a box
 
-**Last verified:** 2026-10-04 · Docker Desktop 4.x (engine 29.8) · Python 3.12 · scikit-learn 1.9.1 · Windows 11
+**Last verified:** 2026-10-06 · Docker engine 29.8.2 · Python 3.12 (in the image) · scikit-learn 1.9.1 · Windows
 
 **Goal:** by the end, a real machine learning model answers questions from inside a Docker container on
 your machine, and you have built the image yourself. This is the exact demo from the video, so you can
 compare every output with what you saw.
 
 **You need:** 30 minutes, VS Code, Git and Docker Desktop — see [Set up your machine](../SETUP.md). Run every
-command in the VS Code terminal. The three files are in this folder:
-`app.py` (the model behind a web address), `requirements.txt` (the ingredients), `Dockerfile` (the recipe).
+command in the VS Code terminal. The files are in this folder: `app.py` (the model behind a web address),
+`requirements.txt` (the ingredients), `Dockerfile` (the recipe) and `checkpoint.py` (the taste test).
 
 ## Steps
 
@@ -29,14 +29,11 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 
-### 2. Get the lab files
+### 2. Open the lab
 
-Either clone this repository or download the three files into a folder called `flower-api`:
-
-```bash
-git clone https://github.com/kovaliovsg/mlops-from-zero.git
-cd mlops-from-zero/lab-docker
-```
+With the labs cloned once ([Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code), steps 1–2), open this
+lab's folder: **File → Open Folder** → `mlops-from-zero\lab-docker`, and open the terminal (`` Ctrl+Shift+` ``).
+This lab needs **no** `.venv`: Python and the libraries live inside the image you are about to build.
 
 ### 3. Look at the recipe
 
@@ -63,7 +60,7 @@ Six lines. Base layer, a folder to work in, the slow layer (libraries) first, yo
 docker build -t flower-api .
 ```
 
-The first build downloads the base image and installs the libraries; expect **about 40–60 seconds**.
+The first build downloads the base image and installs the libraries; expect **about a minute** (more on a slow connection).
 The output ends with:
 
 ```
@@ -106,7 +103,24 @@ Expected output:
 
 Prefer a browser? Open http://localhost:8000/docs — FastAPI gives you a free test page.
 
-### 7. See it, stop it
+### 7. The checkpoint
+
+`checkpoint.py` asks the model both questions from **inside** the container, so it needs nothing on your
+machine:
+
+```bash
+docker exec flower python checkpoint.py
+```
+
+Expected output:
+
+```
+small flower: setosa
+big flower:   virginica
+CHECKPOINT OK
+```
+
+### 8. See it, stop it
 
 ```bash
 docker ps
@@ -121,8 +135,8 @@ docker rm flower
 
 ## Checkpoint
 
-Step 6 returned `{"flower":"setosa"}` from a container you built yourself. That model now runs the same
-on any machine with Docker: the whole kitchen travels with it.
+`CHECKPOINT OK` printed by a container you built yourself. That model now runs the same on any machine with
+Docker: the whole kitchen travels with it.
 
 ## Stretch (optional)
 

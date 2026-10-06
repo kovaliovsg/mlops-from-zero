@@ -1,9 +1,10 @@
 # Set up your machine — do this once, before your first lab
 
-**Last checked:** 2026-10-05 · Windows 11 · VS Code 1.126 · Python 3.12.10 · Git 2.54
+**Last checked:** 2026-10-06 · Windows · VS Code 1.126 · Python 3.12.10 · Git 2.54 · Docker 29.8
 
-Every lab in this course runs **on your own computer, in VS Code**. Installing and running a real toolchain is part
-of the job, so there is no "click here and it runs in the cloud" shortcut. This page lists every tool the labs use,
+You work every lab in this course **from your own computer, in VS Code** — even the later labs that create
+resources in Azure are driven from here. Installing and running a real toolchain is part of the job, so there is no
+"click here and it runs in the cloud" shortcut. This page lists every tool the labs use,
 where to get it, and the few install choices that matter. It grows as the course grows: a tool appears here when the
 first lab that needs it is published.
 
@@ -77,7 +78,8 @@ To get the labs and to save your own work in your fork.
 ## 4. The Python extension in VS Code
 
 - In VS Code, open **Extensions** (`Ctrl+Shift+X`), search **Python**, and install **Python** published by
-  **Microsoft** (`ms-python.python`). It brings the **Python Debugger** with it.
+  **Microsoft** (`ms-python.python`). It brings **Pylance**, the **Python Debugger** and **Python Environments**
+  with it — the last one creates each lab's `.venv`.
 - That is all the current labs need. Notebook labs will add the **Jupyter** extension when they arrive.
 
 ## 5. Docker Desktop
@@ -96,16 +98,30 @@ Only for *A model in a box*.
 
 ## Run a lab in VS Code
 
-The same five steps for every lab:
+Two steps you do **once**, three you do for **every lab**.
 
-1. **Get the labs:** in VS Code, `Ctrl+Shift+P` → **Git: Clone** → paste
+**Once, on day one**
+
+1. **Install the Python extension** ([section 4](#4-the-python-extension-in-vs-code)).
+2. **Get the labs:** in VS Code, `Ctrl+Shift+P` → **Git: Clone** → paste
    `https://github.com/kovaliovsg/mlops-from-zero.git` → choose a folder → **Open**.
    (Or fork the repository first and clone your fork — your fork becomes your public project.)
-2. **Open the lab's folder:** **File → Open Folder** → `mlops-from-zero\<lab folder>`.
-3. **Create its environment:** `Ctrl+Shift+P` → **Python: Create Environment** → **Venv** → **Python 3.12** → tick
-   `requirements.txt` if the lab has one. VS Code creates `.venv`, installs the libraries and selects it.
-4. **Open the terminal** (`` Ctrl+` ``): it already uses the lab's `.venv` — the prompt starts with `(.venv)`.
-5. **Follow the lab's README** from its first step; the **Checkpoint** at the end proves it worked.
+   When VS Code asks whether you trust the authors, choose **Trust** (or check with **Workspaces: Manage Workspace
+   Trust**): trusting the `mlops-from-zero` folder trusts every lab inside it.
+
+**For every lab** (a lab that runs in a container, like *A model in a box*, needs no `.venv`: after step 3 follow
+its README)
+
+3. **Open the lab's folder:** **File → Open Folder** (`Ctrl+K` `Ctrl+O`) → `mlops-from-zero\<lab folder>` — the
+   lab's own folder, not the whole repository.
+4. **Create its environment:** `Ctrl+Shift+P` → **Python: Create Environment** → **Venv** → **Python 3.12** (pick it
+   even if a newer Python is preselected) → tick `requirements.txt` if the lab has one → **OK**. VS Code creates
+   `.venv`, installs the libraries and selects it.
+5. **Run it:** open the terminal (`` Ctrl+Shift+` ``); its prompt starts with `(.venv)`. Follow the lab's README from
+   its first step; the **Checkpoint** at the end proves it worked.
+
+**A new lab was published?** Don't clone again: `Ctrl+Shift+P` → **Git: Pull** brings it into your copy. On a fork,
+first press **Sync fork** on your fork's GitHub page, then **Git: Pull**.
 
 ## If something here breaks
 
