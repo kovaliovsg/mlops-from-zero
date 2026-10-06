@@ -7,9 +7,13 @@ machine, with the expected output under every command.
 **Before your first lab: [set up your machine](SETUP.md)** — VS Code, Python, Git and the rest, with where to
 get each one and the install choices that matter. Every lab runs locally in VS Code.
 
-<a href="https://www.youtube.com/playlist?list=PLKblUEvSYoDc"><img src="assets/course-mlops-from-zero.jpg" width="400" alt="MLOps from Zero - the video course for these labs (YouTube playlist)"></a> <a href="https://youtu.be/g1SpgAq6Zqc"><img src="assets/video-run-a-lab-in-vs-code.jpg" width="400" alt="Run a lab in VS Code - how to set up and run a lab (YouTube video)"></a>
+**[MLOps from Zero](https://www.youtube.com/playlist?list=PLKblUEvSYoDc)** — the video course these labs belong to, every lesson in order (YouTube playlist).
 
-**Left: [MLOps from Zero](https://www.youtube.com/playlist?list=PLKblUEvSYoDc)** — the video course these labs belong to, every lesson in order (YouTube playlist). **Right: [Run a lab in VS Code](https://youtu.be/g1SpgAq6Zqc)** — how to set up your machine and run any lab, recorded step by step (YouTube video).
+<a href="https://www.youtube.com/playlist?list=PLKblUEvSYoDc"><img src="assets/course-mlops-from-zero.jpg" width="480" alt="MLOps from Zero - the video course for these labs (YouTube playlist)"></a>
+
+**[Run a lab in VS Code](https://youtu.be/g1SpgAq6Zqc)** — how to set up your machine and run any lab, recorded step by step (YouTube video).
+
+<a href="https://youtu.be/g1SpgAq6Zqc"><img src="assets/video-run-a-lab-in-vs-code.jpg" width="480" alt="Run a lab in VS Code - how to set up and run a lab (YouTube video)"></a>
 
 [![Labs verified](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml/badge.svg)](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml)
 
