@@ -7,6 +7,10 @@ machine, with the expected output under every command.
 **Before your first lab: [set up your machine](SETUP.md)** — VS Code, Python, Git and the rest, with where to
 get each one and the install choices that matter. Every lab runs locally in VS Code.
 
+[![Run a lab in VS Code - watch on YouTube](assets/run-a-lab-in-vs-code.jpg)](https://youtu.be/g1SpgAq6Zqc)
+
+**Watch *Run a lab in VS Code*** (12 min): the software, and every step from clone to `CHECKPOINT OK`, recorded for real.
+
 [![Labs verified](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml/badge.svg)](https://github.com/kovaliovsg/mlops-from-zero/actions/workflows/verify-labs.yml)
 
 **Every lab is re-run automatically once a month by the pipeline above.** If a tool changes a link, a

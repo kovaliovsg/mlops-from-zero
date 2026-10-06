@@ -1,8 +1,10 @@
 # Lab · Spot the drift
 
+[![What is MLOps? Part 1 - watch on YouTube](../assets/what-is-mlops-part-1.jpg)](https://youtu.be/9TZ1SEuSwxM)
+
 **Last verified:** 2026-10-06 · Python 3.12.10 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows · VS Code
 
-**For the video:** *What is MLOps?*, Parts 1–3. Do this lab after Part 3; the next video, *Run a lab in VS Code*, runs it step by step.
+**For the video:** *What is MLOps?*, [Part 1](https://youtu.be/9TZ1SEuSwxM) · [Part 2](https://youtu.be/TJB_veLqWOM) · [Part 3](https://youtu.be/fPQjGaBLhH8). Do this lab after Part 3; the next video, [*Run a lab in VS Code*](https://youtu.be/g1SpgAq6Zqc), runs it step by step.
 
 **Goal:** you can name the two kinds of drift in a model you use every day, and you have watched a model drift
 in front of you — once because its inputs moved, once because the world changed while the inputs looked normal.
