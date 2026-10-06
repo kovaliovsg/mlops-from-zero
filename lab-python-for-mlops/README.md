@@ -14,7 +14,7 @@ own eyes. That is phase one of the roadmap, and every later lab starts from here
 
 ### 1. Open this lab and create its environment
 
-Follow steps 3–5 of [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code): **File → Open Folder** →
+Follow steps 3–4 of [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code): **File → Open Folder** →
 `mlops-from-zero\lab-python-for-mlops`, then **Python: Create Environment** → **Venv** → **Python 3.12** → tick
 `requirements.txt` → **OK**. A virtual environment is a private shelf of libraries for one project; VS Code
 creates it as `.venv` inside this folder and installs pandas into it.
