@@ -106,8 +106,8 @@ Two steps you do **once**, three you do for **every lab**.
 2. **Get the labs:** in VS Code, `Ctrl+Shift+P` → **Git: Clone** → paste
    `https://github.com/kovaliovsg/mlops-from-zero.git` → choose a folder → **Open**.
    (Or fork the repository first and clone your fork — your fork becomes your public project.)
-   When VS Code asks whether you trust the authors, choose **Trust** (or check with **Workspaces: Manage Workspace
-   Trust**): trusting the `mlops-from-zero` folder trusts every lab inside it.
+   If VS Code asks whether you trust the authors, choose **Yes, I trust the authors** (on a Restricted Mode banner,
+   **Manage** → **Trust**; check any time with **Workspaces: Manage Workspace Trust**): trusting the `mlops-from-zero` folder trusts every lab inside it.
 
 **For every lab** (a lab that runs in a container, like *A model in a box*, needs no `.venv`: after step 3 follow
 its README)
@@ -122,6 +122,7 @@ its README)
 
 **A new lab was published?** Don't clone again: `Ctrl+Shift+P` → **Git: Pull** brings it into your copy. On a fork,
 first press **Sync fork** on your fork's GitHub page, then **Git: Pull**.
+Cloned the original and want a fork now? Fork it on GitHub, then clone your fork into a new folder.
 
 ## If something here breaks
 

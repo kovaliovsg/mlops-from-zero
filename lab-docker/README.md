@@ -79,6 +79,8 @@ The `-p 8000:8000` part connects port 8000 on your machine to port 8000 inside t
 
 ### 6. Ask the model a question
 
+On Windows PowerShell type `curl.exe`, not `curl` (there `curl` is another command with a different output).
+
 ```bash
 curl "localhost:8000/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2"
 ```
