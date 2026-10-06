@@ -40,7 +40,7 @@ Two worked answers, so you can check your thinking:
 ## Part B · Watch it happen (10 minutes)
 
 1. In VS Code, open the `lab-what-is-mlops` folder and create its environment — **Python: Create Environment** →
-   **Venv** → **Python 3.12**, with `requirements.txt` ticked (steps 3–5 of
+   **Venv** → **Python 3.12**, with `requirements.txt` ticked (steps 3–4 of
    [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code); steps 1–2 are done once).
 2. In the VS Code terminal (its prompt starts with `(.venv)`), run:
 
