@@ -1,6 +1,6 @@
 # Set up your machine — do this once, before your first lab
 
-**Last checked:** 2026-10-06 · Windows · VS Code 1.126 · Python 3.12.10 · Git 2.54 · Docker 29.8
+**Last checked:** 2026-10-06 · Windows · VS Code 1.126 · Python 3.12.10 · Git 2.54
 
 You work every lab in this course **from your own computer, in VS Code** — even the later labs that create
 resources in Azure are driven from here. Installing and running a real toolchain is part of the job, so there is no
@@ -13,12 +13,11 @@ the commands that differ are noted.
 
 ## What each lab needs
 
-| Tool | Spot the drift | The first brick | A model in a box |
-|---|---|---|---|
-| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-extension-in-vs-code) | ✅ | ✅ | ✅ |
-| [Python 3.12](#2-python-312) | ✅ | ✅ | — (Python runs inside the container) |
-| [Git](#3-git) | ✅ | ✅ | ✅ |
-| [Docker Desktop](#5-docker-desktop) | — | — | ✅ |
+| Tool | Spot the drift |
+|---|---|
+| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-extension-in-vs-code) | ✅ |
+| [Python 3.12](#2-python-312) | ✅ |
+| [Git](#3-git) | ✅ |
 
 ## 1. VS Code
 
@@ -84,17 +83,8 @@ To get the labs and to save your own work in your fork.
 
 ## 5. Docker Desktop
 
-Only for *A model in a box*.
-
-- **Get it:** on https://www.docker.com/products/docker-desktop/, click **Download for Windows**.
-- **Install:** accept the defaults. It uses **WSL 2**; the installer sets it up and may ask for a restart.
-- **Check:** start Docker Desktop, wait until it says it is running, then:
-
-  ```
-  docker run --rm hello-world
-  ```
-
-  Expected output contains `Hello from Docker!`.
+Only for the lab that puts a model in a container. Its install steps appear here when that lab is published —
+skip it until then.
 
 ## Run a lab in VS Code
 
@@ -127,8 +117,7 @@ Two steps you do **once**, three you do for **every lab**.
 
    Or fork the repository first and clone your fork — your fork becomes your public project.
 
-**For every lab** (a lab that runs in a container, like *A model in a box*, needs no `.venv`: after step 3 follow
-its README)
+**For every lab** (a lab that runs in a container needs no `.venv`: after step 3 follow its README)
 
 3. **Open the lab's folder:**
    1. Press `Ctrl+K`, then `Ctrl+O` (or the **File** menu, **Open Folder**).
