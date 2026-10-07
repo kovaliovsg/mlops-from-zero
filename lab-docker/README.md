@@ -10,6 +10,8 @@ compare every output with what you saw.
 command in the VS Code terminal. The files are in this folder: `app.py` (the model behind a web address),
 `requirements.txt` (the ingredients), `Dockerfile` (the recipe) and `checkpoint.py` (the taste test).
 
+**Cost:** free. Nothing runs in Azure.
+
 ## Steps
 
 ### 1. Install Docker Desktop and prove it works

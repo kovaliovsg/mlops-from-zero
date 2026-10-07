@@ -10,6 +10,8 @@ own eyes. That is phase one of the roadmap, and every later lab starts from here
 **You need:** 15 minutes, and VS Code with the Python extension, Python 3.12 and the labs cloned — see
 [Set up your machine](../SETUP.md) (steps 1–2 of *Run a lab in VS Code*, done once).
 
+**Cost:** free. Nothing runs in Azure.
+
 ## Steps
 
 ### 1. Open this lab and create its environment
