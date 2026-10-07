@@ -159,6 +159,16 @@ Cloned the original and want a fork now? Fork it on GitHub, then clone your fork
   Install the Python install manager above; then open **Start**, search **Manage app execution aliases**, and check that the
   **Python (default)** aliases are on (`python.exe` set to *Python (default)*). If they already are, turn them off and
   on again. ([Python docs](https://docs.python.org/3/using/windows.html))
+- **A VS Code shortcut does nothing (for example `Ctrl+Shift+X`), even after resetting VS Code:** another program
+  on your PC has taken that shortcut for the whole of Windows. The usual one is **AMD Software: Adrenalin Edition**
+  (graphics-card software), which uses `Ctrl+Shift+X` and several other `Ctrl+Shift` shortcuts.
+  1. Open **AMD Software: Adrenalin Edition**, type **Hotkey** in its search box and click **Hotkey Settings**.
+  2. Click the tile of the shortcut VS Code needs and press **Delete** to unbind it (or press a new combination).
+  3. Back in VS Code, press the shortcut again.
+
+  No AMD software? Quit the apps by the clock (**^**, right-click, **Exit**) one at a time until the shortcut works.
+  Meanwhile, the icons in VS Code's left bar do the same job (four squares = **Extensions**).
+  ([AMD hotkey settings](https://www.amd.com/en/resources/support-articles/faqs/DH3-038.html))
 - **`code`, `git` or `py` is "not recognized" right after installing:** open a **new** terminal (or restart VS Code);
   installers change PATH for new windows only.
 - **A download page moved:** search for the tool's name plus "download"; then
