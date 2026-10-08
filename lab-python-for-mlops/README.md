@@ -307,21 +307,22 @@ clean row per day, branch and dish, and every test passes.
 
 ## Practice questions
 
-1. On an Azure Machine Learning compute instance, a notebook needs `holidays`, which its kernel does not have. Which
-   line installs it into the kernel the notebook is running, and why not the other form?
-2. You created an Azure Machine Learning environment from a conda file that lists `pandas` with no version. Three
-   months later a colleague runs the same job with the same environment. Which pandas version do they get?
-3. A data scientist hands you a notebook that trains a model. Before it can run as a job, Microsoft recommends three
-   changes. Name them, and the Python library that lets the job pass in values such as the path to the data.
+1. Your notebook prints 82,140 on your machine. A colleague opens it, runs it top to bottom, and cell 9 fails with
+   `NameError`. What is the most likely cause, and which two clicks would have caught it before you shared it?
+2. You run `pip lock` on your Windows laptop with Python 3.12 and commit `pylock.toml`. The team's Linux build server
+   runs Python 3.13. Can it rely on your lock?
+3. A data scientist hands you a notebook that trains a model. Before it can run unattended — as a scheduled job or a
+   pipeline step — Microsoft recommends three changes. Name them, and the Python library that lets the job pass in
+   values such as the path to the data.
 
 <details><summary>Answers</summary>
 
-1. `%pip install holidays`. `%pip` installs into the kernel the notebook is running. A compute instance has several
-   kernels, and Microsoft's documentation warns that `!pip` refers to packages outside the running kernel too.
-2. The version that was current when the environment was created: an unpinned package is resolved once, when the
-   environment's image is built, and the cached image is reused after that. Pin it (`pandas==3.0.6`) to choose.
-3. Remove the code that was only for exploring, refactor the rest into functions, and test the script in a
-   terminal. `argparse` reads the arguments the job passes, such as `--training_data`.
+1. Hidden state: cell 9 uses a variable made by a cell you ran earlier and then changed or deleted. The notebook only
+   worked because of the order you happened to run things in. **Restart**, then **Run All** — the check in step 4.
+2. No. `pip lock` guarantees the lock only for the Python version and the operating system that made it. Make the
+   lock where it will be used, or with the same Python on the same platform.
+3. Remove the code that was only for exploring, refactor the rest into functions, and test the script in a terminal.
+   `argparse` reads the arguments the job passes, such as `--training_data`.
 </details>
 
 ## Stretch (optional)
