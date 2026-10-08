@@ -13,9 +13,10 @@ the commands that differ are noted.
 
 ## What each lab needs
 
-| Tool | Spot the drift | The first brick | A model in a box |
+| Tool | Spot the drift | Stand up the prep-forecast repo | A model in a box |
 |---|---|---|---|
-| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-extension-in-vs-code) | ✅ | ✅ | ✅ |
+| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-and-jupyter-extensions-in-vs-code) | ✅ | ✅ | ✅ |
+| the [Jupyter extension](#4-the-python-and-jupyter-extensions-in-vs-code) | — | ✅ | — |
 | [Python 3.12](#2-python-312) | ✅ | ✅ | — (Python runs inside the container) |
 | [Git](#3-git) | ✅ | ✅ | ✅ |
 | [Docker Desktop](#5-docker-desktop) | — | — | ✅ |
@@ -75,12 +76,14 @@ To get the labs and to save your own work in your fork.
 
   Expected: `git version 2.x…` (any recent version works).
 
-## 4. The Python extension in VS Code
+## 4. The Python and Jupyter extensions in VS Code
 
 - In VS Code, open **Extensions** (`Ctrl+Shift+X`), search **Python**, and install **Python** published by
   **Microsoft** (`ms-python.python`). It brings **Pylance**, the **Python Debugger** and **Python Environments**
   with it — the last one creates each lab's `.venv`.
-- That is all the current labs need. Notebook labs will add the **Jupyter** extension when they arrive.
+- For the labs with notebooks (`.ipynb` files), install **Jupyter** published by **Microsoft** (`ms-toolsai.jupyter`)
+  the same way. It runs notebooks inside VS Code; each lab's own `.venv` is the notebook's kernel, chosen with the
+  kernel picker in the notebook's top right.
 
 ## 5. Docker Desktop
 
@@ -115,7 +118,7 @@ Two steps you do **once**, three you do for **every lab**.
 
 **Once, on day one**
 
-1. **Install the Python extension** ([section 4](#4-the-python-extension-in-vs-code)).
+1. **Install the Python extension** ([section 4](#4-the-python-and-jupyter-extensions-in-vs-code)).
 2. **Get the labs:**
    1. Press `Ctrl+Shift+P`, type **Git: Clone** and press **Enter**.
    2. Paste `https://github.com/kovaliovsg/mlops-from-zero.git` and press **Enter**.

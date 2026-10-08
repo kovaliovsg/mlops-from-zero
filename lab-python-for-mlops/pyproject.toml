@@ -1,0 +1,35 @@
+# The recipe card for this project: what it is, what it needs, and how its tests run.
+# Every version is pinned (==), so the pantry you build is the pantry this lab was verified with.
+
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prep-forecast"
+version = "0.1.0"
+description = "The restaurant chain's prep forecast - Lab 02 of MLOps from Zero"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+    "numpy==2.5.3",
+    "pandas==3.0.6",
+    "pyarrow==25.0.1",
+    "holidays==0.106",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "ipykernel==7.4.0",
+    "nbconvert==7.17.1",
+    "scikit-learn==1.9.1",
+]
+
+[project.scripts]
+prepare = "prep_forecast.prepare:main"
+
+[tool.pytest]
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = ["-ra", "--import-mode=importlib"]

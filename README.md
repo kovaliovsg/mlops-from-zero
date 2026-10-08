@@ -26,7 +26,7 @@ the top of each lab says when it was last verified.
 | Lab | For the video | What you build | Time |
 |---|---|---|---|
 | [Spot the drift](lab-what-is-mlops/) | What is MLOps? (after Part 3) | Name the two kinds of drift, then watch a model drift in one command | 15 min |
-| [The first brick](lab-python-for-mlops/) | Python for MLOps | Python, pandas, one dataset, ten rows | 15 min |
+| [Stand up the prep-forecast repo](lab-python-for-mlops/) | Python for MLOps (after Part 7) | The running project's first brick: a locked environment, three years of order books with planted mistakes, a notebook turned into a tested command | 35 min |
 | [A model in a box](lab-docker/) | Docker | A real scikit-learn model served by FastAPI, built into a Docker image, run as a container | 30 min |
 
 More labs are added as the course grows. **Fork this repository**: your fork becomes the public,

@@ -1,0 +1,6 @@
+# Settings for prepare. Read with tomllib - never put a password or key in this file.
+[prepare]
+input = "data"
+output = "data/daily_demand.parquet"
+max_qty = 500            # one dish, one branch, one service: more than this is a typo
+country = "US"           # whose public holidays mark is_holiday

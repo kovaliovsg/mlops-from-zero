@@ -26,18 +26,46 @@ jobs:
           grep -q "CHECKPOINT OK" out.txt
 
   lab-python-for-mlops:
-    name: "Lab · first brick (Python for MLOps)"
+    name: "Lab · stand up the prep-forecast repo (Python for MLOps)"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab-python-for-mlops
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Install exactly what the lab pins
-        run: pip install -r lab-python-for-mlops/requirements.txt
-      - name: Run the lab script and check the checkpoint
+      - name: Build the pantry as the lab does - venv, newer pip, editable install, lock
         run: |
-          python lab-python-for-mlops/first_brick.py | tee out.txt
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip lock -e ".[dev]"
+          test -s pylock.toml
+      - name: The taste test - a seed repeats the score exactly
+        run: |
+          source .venv/bin/activate
+          [ "$(python taste_test.py --seed 42)" = "$(python taste_test.py --seed 42)" ]
+      - name: Generate the order books, run the notebook, convert it to a script
+        run: |
+          source .venv/bin/activate
+          python -m prep_forecast.generate
+          jupyter nbconvert --to notebook --execute explore.ipynb --output explore-run.ipynb
+          jupyter nbconvert --to script explore.ipynb
+          test -s explore.py
+      - name: prepare - a wrong argument exits with 2, a real run with 0
+        run: |
+          source .venv/bin/activate
+          set +e; prepare --max-qty lots; code=$?; set -e
+          [ "$code" -eq 2 ]
+          prepare
+      - name: Tests and the checkpoint
+        run: |
+          source .venv/bin/activate
+          pytest
+          python checkpoint.py | tee out.txt
           grep -q "CHECKPOINT OK" out.txt
 
   lab-docker:
