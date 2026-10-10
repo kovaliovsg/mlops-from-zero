@@ -43,3 +43,10 @@ end-to-end project that the course keeps telling you to build.
 ## License
 
 MIT — use the code however you like. The videos are © their author.
+
+## Sources, licences and trademarks
+
+The course is researched from Microsoft Learn (CC BY 4.0 documentation) and the libraries' own documentation; the
+narration in the videos is an AI voice. The sources, the licences of every tool the labs use and the trademark notice
+are in [ATTRIBUTION.md](ATTRIBUTION.md). MLOps from Zero is an independent publication, not affiliated with,
+authorized, sponsored or approved by Microsoft Corporation.
