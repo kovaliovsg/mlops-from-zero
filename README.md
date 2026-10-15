@@ -26,6 +26,7 @@ the top of each lab says when it was last verified.
 | Lab | For the video | What you build | Time |
 |---|---|---|---|
 | [Spot the drift](lab-what-is-mlops/) | What is MLOps? (after Part 3) | Name the two kinds of drift, then watch a model drift in one command | 15 min |
+| [Jupyter notebooks](lab-jupyter-notebooks/) | Python for MLOps (Part 3) | The soup-tasting notebook on its own .venv kernel: break it with hidden state, catch it with Restart and Run All and with nbconvert's exit code, keep it readable in Git | 15 min |
 | [NumPy and pandas](lab-numpy-pandas/) | Python for MLOps (Part 4) | A stock-take of four years of order books: point at rows, hunt blanks, copies and impossible numbers with masks, save a clean table as Parquet | 15 min |
 | [Stand up the prep-forecast repo](lab-python-for-mlops/) | Python for MLOps (after Part 7) | The running project's first brick: a locked environment, three years of order books with planted mistakes, a notebook turned into a tested command | 35 min |
 | [A model in a box](lab-docker/) | Containers for ML (after Part 2) | A real scikit-learn model served by FastAPI, built into a Docker image, run as a container | 30 min |

@@ -25,6 +25,41 @@ jobs:
           python lab-what-is-mlops/drift_demo.py | tee out.txt
           grep -q "CHECKPOINT OK" out.txt
 
+  lab-jupyter-notebooks:
+    name: "Lab · Jupyter notebooks (Python for MLOps)"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab-jupyter-notebooks
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Build the environment from the lab's pins
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r requirements.txt
+      - name: The notebook runs headless on a brand-new kernel - exit code 0
+        run: |
+          source .venv/bin/activate
+          jupyter nbconvert --to notebook --execute tasting.ipynb
+          test -s tasting.nbconvert.ipynb
+      - name: Hidden state - with the salt cell deleted, the same command exits non-zero
+        run: |
+          source .venv/bin/activate
+          python -c "import nbformat as n; nb = n.read('tasting.ipynb', 4); nb.cells = [c for c in nb.cells if 'salt_per_portion = 1.5' not in c.source]; n.write(nb, 'broken.ipynb')"
+          set +e; jupyter nbconvert --to notebook --execute broken.ipynb; code=$?; set -e
+          [ "$code" -ne 0 ]
+      - name: Clear soup.ipynb as the lab does, then the checkpoint
+        run: |
+          source .venv/bin/activate
+          rm -f tasting.nbconvert.ipynb broken.ipynb
+          jupyter nbconvert --clear-output --inplace soup.ipynb
+          python checkpoint.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
+
   lab-numpy-pandas:
     name: "Lab · NumPy and pandas (Python for MLOps)"
     runs-on: ubuntu-latest

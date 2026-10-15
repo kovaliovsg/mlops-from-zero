@@ -1,0 +1,4 @@
+# This folder's pantry: rebuilt from requirements.txt, never committed.
+.venv/
+# Jupyter and JupyterLab save a copy of every notebook here.
+.ipynb_checkpoints/
