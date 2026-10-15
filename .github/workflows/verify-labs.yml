@@ -25,6 +25,39 @@ jobs:
           python lab-what-is-mlops/drift_demo.py | tee out.txt
           grep -q "CHECKPOINT OK" out.txt
 
+  lab-numpy-pandas:
+    name: "Lab · NumPy and pandas (Python for MLOps)"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab-numpy-pandas
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Build the environment from the lab's pins
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r requirements.txt
+      - name: NumPy - the slice is a view, so the week changed
+        run: |
+          source .venv/bin/activate
+          python arrays.py | tee out.txt
+          [ "$(tail -n 1 out.txt)" = "[18 15 17 19 24  0 21]" ]
+      - name: Write the order books and run the notebook top to bottom
+        run: |
+          source .venv/bin/activate
+          python generate.py
+          python -m pip install nbconvert==7.17.2
+          jupyter nbconvert --to notebook --execute stock_take.ipynb --output stock_take-run.ipynb
+      - name: Checkpoint
+        run: |
+          source .venv/bin/activate
+          python checkpoint.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
+
   lab-python-for-mlops:
     name: "Lab · stand up the prep-forecast repo (Python for MLOps)"
     runs-on: ubuntu-latest
