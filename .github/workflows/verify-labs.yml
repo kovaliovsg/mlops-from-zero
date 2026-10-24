@@ -24,6 +24,10 @@ jobs:
         run: |
           python lab-what-is-mlops/drift_demo.py | tee out.txt
           grep -q "CHECKPOINT OK" out.txt
+      - name: Run the retrain demo and check the checkpoint
+        run: |
+          python lab-what-is-mlops/retrain_demo.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
 
   lab-jupyter-notebooks:
     name: "Lab · Jupyter notebooks (Python for MLOps)"

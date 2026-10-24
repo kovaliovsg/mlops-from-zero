@@ -8,19 +8,20 @@
 
 <a href="https://youtu.be/g1SpgAq6Zqc"><img src="../assets/video-run-a-lab-in-vs-code.jpg" width="480" alt="Run a lab in VS Code - how to set up and run a lab (YouTube video)"></a>
 
-**Last verified:** 2026-10-06 · Python 3.12.10 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows · VS Code
+**Last verified:** 2026-10-24 · Python 3.12.10 · numpy 2.5.3 · scikit-learn 1.9.1 · Windows · VS Code
 
 **Do this lab after Part 3 in the playlist.**
 
-**Goal:** you can name the two kinds of drift in a model you use every day, and you have watched a model drift
-in front of you — once because its inputs moved, once because the world changed while the inputs looked normal.
+**Goal:** you can name the two kinds of drift in a model you use every day, you have watched a model drift
+in front of you — once because its inputs moved, once because the world changed while the inputs looked normal —
+and you have seen retraining on fresh data bring its error back down.
 
 ## Prerequisites
 
 | You need | Why | Get it |
 |---|---|---|
 | Nothing for Part A | it is a pen-and-paper exercise | — |
-| For Part B: VS Code with the Python extension, Python 3.12, Git | the lab runs on your machine, in VS Code | [Set up your machine](../SETUP.md) |
+| For Parts B and C: VS Code with the Python extension, Python 3.12, Git | the lab runs on your machine, in VS Code | [Set up your machine](../SETUP.md) |
 
 **Cost:** free. Nothing runs in Azure.
 
@@ -45,7 +46,7 @@ Two worked answers, so you can check your thinking:
 | Data drift | spammers switch to images and new words the model never saw | a heatwave: temperatures far above anything in training |
 | Concept drift | a word that meant "spam" last year is now in normal newsletters | a competitor opens next door: same weather, fewer customers |
 
-## Part B · Watch it happen (10 minutes)
+## Part B · Watch it happen (7 minutes)
 
 Steps 3–5 of [Run a lab in VS Code](../SETUP.md#run-a-lab-in-vs-code), for this lab (steps 1–2 are done once):
 
@@ -79,9 +80,61 @@ people stay indoors, so the model — which never saw 36 degrees — orders far 
 a competitor opens, the weather is ordinary, so nothing looks wrong on the input dashboard, yet the forecast is
 off by almost thirty portions a day (**concept drift**).
 
+Now read the output the way a monitor would. Monitoring watches four signals: **the service** (is it up and
+fast?), **the data** (does it look like the training data?), **the predictions** (have the answers shifted?) and
+**the truth** (once the real sales arrive, is the model still right?). For check 2 and check 3, write down which
+signals would have flagged the problem:
+
+| | The service | The data | The predictions | The truth |
+|---|---|---|---|---|
+| Check 2, a heatwave | | | | |
+| Check 3, competitor opens | | | | |
+
+<details><summary>Answer</summary>
+
+| | The service | The data | The predictions | The truth |
+|---|---|---|---|---|
+| Check 2, a heatwave | no — no error, still fast | **yes** — 35.7 C against 19.1 C in training | **yes** — hotter days, bigger forecasts | **yes** — off by 56.7 portions |
+| Check 3, competitor opens | no | no — 18.4 C looks like spring | no — spring weather, spring forecasts | **yes** — off by 28.7 portions |
+
+Only the truth catches the concept drift: you have to compare the forecast with what really sold.
+</details>
+
+## Part C · Retrain it (3 minutes)
+
+The fix for both kinds of drift is the same: train the same code again on fresh data. `retrain_demo.py` replays
+the same days as `drift_demo.py` (the same random seed), then trains the model again on the 30 latest days of each
+new world, and checks it on 30 later days it has not seen.
+
+1. In the same terminal, run:
+
+   ```
+   python retrain_demo.py
+   ```
+
+Expected output:
+
+```
+The spring model, before retraining:
+  heatwave days:     average error  56.7 portions
+  competitor days:   average error  28.7 portions
+
+Retrained on the 30 latest heatwave days:
+  later heatwave days:    average error   3.3 portions
+Retrained on the 30 latest days with the competitor open:
+  later competitor days:  average error   2.6 portions
+
+Same code, fresh data: the error is back near the spring level of 3.5 portions.
+CHECKPOINT OK
+```
+
+Nothing in the code changed — only the data it learned from. That is why MLOps retrains on a schedule or when a
+monitor fires (**continuous training**): the recipe is fine, the ingredients and the customers moved.
+
 ## Checkpoint
 
-`CHECKPOINT OK` printed, and check 2 and check 3 both show an error far larger than check 1.
+`CHECKPOINT OK` printed by both programs: in `drift_demo.py`, check 2 and check 3 both show an error far larger
+than check 1; in `retrain_demo.py`, both retrained errors are back near check 1's.
 
 ## Practice questions
 
@@ -106,7 +159,7 @@ off by almost thirty portions a day (**concept drift**).
 - **`pip` cannot find a pinned version:** the libraries moved on. Run `pip install numpy scikit-learn` without
   pins; the numbers may differ slightly but the story is the same. Then open an issue so this lab gets updated.
 - **Your numbers differ a little from the expected output:** fine, as long as check 2 and check 3 are far above
-  check 1 and `CHECKPOINT OK` prints.
+  check 1, the retrained errors are back near it, and `CHECKPOINT OK` prints.
 
 ## Hand in
 
