@@ -10,6 +10,33 @@ on:
   workflow_dispatch:
 
 jobs:
+  lab-setup-check:
+    name: "Lab · check your setup (Run a lab in VS Code)"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab-setup-check
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: No station yet - the check fails with exit code 1 and the .venv line MISSING
+        run: |
+          set +e; python kitchen_check.py | tee out.txt; code=${PIPESTATUS[0]}; set -e
+          [ "$code" -eq 1 ]
+          grep -Eq "the lab's \.venv +MISSING" out.txt
+          grep -q "CHECKPOINT FAILED" out.txt
+      - name: Build the station from the lab's pins
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+      - name: Checkpoint inside the station
+        run: |
+          source .venv/bin/activate
+          python kitchen_check.py | tee out.txt
+          grep -q "CHECKPOINT OK" out.txt
+
   lab-what-is-mlops:
     name: "Lab · spot the drift (What is MLOps?)"
     runs-on: ubuntu-latest

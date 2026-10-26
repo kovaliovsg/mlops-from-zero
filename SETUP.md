@@ -13,13 +13,13 @@ the commands that differ are noted.
 
 ## What each lab needs
 
-| Tool | Spot the drift | Jupyter notebooks | NumPy and pandas | Stand up the prep-forecast repo | A model in a box |
-|---|---|---|---|---|---|
-| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-and-jupyter-extensions-in-vs-code) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| the [Jupyter extension](#4-the-python-and-jupyter-extensions-in-vs-code) | — | ✅ | ✅ | ✅ | — |
-| [Python 3.12](#2-python-312) | ✅ | ✅ | ✅ | ✅ | — (Python runs inside the container) |
-| [Git](#3-git) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Docker Desktop](#5-docker-desktop) | — | — | — | — | ✅ |
+| Tool | Check your setup | Spot the drift | Jupyter notebooks | NumPy and pandas | Stand up the prep-forecast repo | A model in a box |
+|---|---|---|---|---|---|---|
+| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-and-jupyter-extensions-in-vs-code) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| the [Jupyter extension](#4-the-python-and-jupyter-extensions-in-vs-code) | — | — | ✅ | ✅ | ✅ | — |
+| [Python 3.12](#2-python-312) | ✅ | ✅ | ✅ | ✅ | ✅ | — (Python runs inside the container) |
+| [Git](#3-git) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Docker Desktop](#5-docker-desktop) | — | — | — | — | — | ✅ |
 
 ## 1. VS Code
 
