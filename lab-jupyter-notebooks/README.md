@@ -1,6 +1,16 @@
 # Lab · Jupyter notebooks
 
+**[MLOps from Zero](https://www.youtube.com/playlist?list=PLKblUEvSYoDc)** — the video course these labs belong to, every lesson in order (YouTube playlist).
+
+<a href="https://www.youtube.com/playlist?list=PLKblUEvSYoDc"><img src="../assets/course-mlops-from-zero.jpg" width="480" alt="MLOps from Zero - the video course for these labs (YouTube playlist)"></a>
+
+**[Run a lab in VS Code](https://youtu.be/g1SpgAq6Zqc)** — how to set up your machine and run any lab, recorded step by step (YouTube video).
+
+<a href="https://youtu.be/g1SpgAq6Zqc"><img src="../assets/video-run-a-lab-in-vs-code.jpg" width="480" alt="Run a lab in VS Code - how to set up and run a lab (YouTube video)"></a>
+
 **Last verified:** 2026-10-15 · Python 3.12.10 · ipykernel 7.4.0 · nbconvert 7.17.1 · VS Code 1.141.2 · Jupyter extension 2025.9.1 · Git 2.52 · Windows 11
+
+**Do this lab after Part 3 in the playlist.**
 
 **Goal:** you run the video's soup-tasting notebook on the lab's own `.venv`, break it with hidden state and catch the
 break twice — with **Restart** and **Run All** in VS Code, and with `jupyter nbconvert --execute` in the terminal and its
