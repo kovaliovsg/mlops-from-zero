@@ -1,6 +1,16 @@
 # Lab · NumPy and pandas
 
+**[MLOps from Zero](https://www.youtube.com/playlist?list=PLKblUEvSYoDc)** — the video course these labs belong to, every lesson in order (YouTube playlist).
+
+<a href="https://www.youtube.com/playlist?list=PLKblUEvSYoDc"><img src="../assets/course-mlops-from-zero.jpg" width="480" alt="MLOps from Zero - the video course for these labs (YouTube playlist)"></a>
+
+**[Run a lab in VS Code](https://youtu.be/g1SpgAq6Zqc)** — how to set up your machine and run any lab, recorded step by step (YouTube video).
+
+<a href="https://youtu.be/g1SpgAq6Zqc"><img src="../assets/video-run-a-lab-in-vs-code.jpg" width="480" alt="Run a lab in VS Code - how to set up and run a lab (YouTube video)"></a>
+
 **Last verified:** 2026-10-14 · Python 3.12.10 · numpy 2.5.3 · pandas 3.0.6 · pyarrow 25.0.1 · holidays 0.106 · ipykernel 7.4.0 · Windows 11
+
+**Do this lab after Part 4 in the playlist.**
 
 **Goal:** you run the video's stock-take on almost four years of a restaurant chain's order books, then hunt and
 clean with your own cells: you point at rows by label and by position, find blanks, copies, impossible numbers and
