@@ -26,6 +26,7 @@ the top of each lab says when it was last verified.
 | Lab | For the video | What you build | Time |
 |---|---|---|---|
 | [Spot the drift](lab-what-is-mlops/) | What is MLOps? (after Part 3) | Name the two kinds of drift, then watch a model drift in one command | 15 min |
+| [Jupyter notebooks](lab-jupyter-notebooks/) | Python for MLOps (Part 3) | The soup-tasting notebook on its own .venv kernel: break it with hidden state, catch it with Restart and Run All and with nbconvert's exit code, keep it readable in Git | 15 min |
 
 A new lab is added here when the video that uses it is published. **Fork this repository**: your fork becomes the public,
 end-to-end project that the course keeps telling you to build.
