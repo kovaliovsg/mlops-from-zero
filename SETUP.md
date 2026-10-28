@@ -13,12 +13,12 @@ the commands that differ are noted.
 
 ## What each lab needs
 
-| Tool | Spot the drift | Jupyter notebooks |
-|---|---|---|
-| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-and-jupyter-extensions-in-vs-code) | ✅ | ✅ |
-| the [Jupyter extension](#4-the-python-and-jupyter-extensions-in-vs-code) | — | ✅ |
-| [Python 3.12](#2-python-312) | ✅ | ✅ |
-| [Git](#3-git) | ✅ | ✅ |
+| Tool | Spot the drift | Jupyter notebooks | NumPy and pandas |
+|---|---|---|---|
+| [VS Code](#1-vs-code) + the [Python extension](#4-the-python-and-jupyter-extensions-in-vs-code) | ✅ | ✅ | ✅ |
+| the [Jupyter extension](#4-the-python-and-jupyter-extensions-in-vs-code) | — | ✅ | ✅ |
+| [Python 3.12](#2-python-312) | ✅ | ✅ | ✅ |
+| [Git](#3-git) | ✅ | ✅ | ✅ |
 
 ## 1. VS Code
 
